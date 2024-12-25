@@ -1,10 +1,12 @@
-def adder(a: int, b: int) -> int:
-    return a + b
+from fastapi import FastAPI
+from transactions.router import router as transactions_router
+
+app = FastAPI(title="Bank Transactions API")
+
+# Include routers
+app.include_router(transactions_router)
 
 
-def main() -> None:
-    print(adder(1, 2))
-
-
-if __name__ == "__main__":
-    main()
+@app.get("/")
+async def root():
+    return {"message": "Welcome to Bank Transactions API"}
