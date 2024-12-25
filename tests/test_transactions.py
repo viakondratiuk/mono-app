@@ -4,7 +4,7 @@ from main import app
 client = TestClient(app)
 
 
-def test_get_transactions():
+def test_get_transactions() -> None:
     response = client.get("/transactions/")
     assert response.status_code == 200
     assert isinstance(response.json(), list)
