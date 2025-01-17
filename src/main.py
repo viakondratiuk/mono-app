@@ -1,17 +1,10 @@
-from fastapi import FastAPI
-from transactions.router import router as transactions_router
-
-# TODO: fix mypy imports
-# TODO: Configure ruff and on commit, what is different from black?
-# TODO: Figure out what is JsonSchema
-# TODO: Add logging
-# TODO: How to hide unnecesary folders in vscode?
+def hello() -> str:
+    return "Hello from yt-uv!"
 
 
-app = FastAPI()
-app.include_router(transactions_router)
+def add(a: int, b: int) -> int:
+    return a + b
 
 
-@app.get("/")
-async def root() -> dict[str, str]:
-    return {"message": "Welcome to Bank Transactions API"}
+def multiply(a: float, b: int) -> float:
+    return a * b
