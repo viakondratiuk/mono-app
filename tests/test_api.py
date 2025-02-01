@@ -1,6 +1,5 @@
 from fastapi.testclient import TestClient
-
-from mono_app.api import app
+from src.api import app
 
 client = TestClient(app)
 

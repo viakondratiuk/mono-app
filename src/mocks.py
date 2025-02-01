@@ -50,6 +50,10 @@ class TransactionFactory(ModelFactory[Transaction]):
     __model__ = Transaction
 
     @staticmethod
+    def id() -> str:
+        return str(fake.uuid4())
+
+    @staticmethod
     def date() -> date:
         return fake.date_this_year()
 
@@ -62,12 +66,12 @@ class TransactionFactory(ModelFactory[Transaction]):
         return Decimal(f"{random.uniform(-500, 500):.2f}")
 
     @staticmethod
-    def account() -> Account:
-        return AccountFactory.build()
+    def account_id() -> str:
+        return str(fake.uuid4())
 
     @staticmethod
-    def category() -> Category:
-        return CategoryFactory.build()
+    def category_id() -> str:
+        return str(fake.uuid4())
 
     @staticmethod
     def description() -> str:
