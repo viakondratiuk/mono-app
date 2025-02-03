@@ -18,10 +18,7 @@ build-backend = "hatchling.build"
 universal = true
 
 [dependency-groups]
-dev = [
-    "pyright>=1.1.391",
-    "pytest-cov>=6.0.0",
-]
+dev = ["pyright>=1.1.391", "pytest-cov>=6.0.0"]
 
 [tool.ruff]
 line-length = 100
@@ -39,7 +36,8 @@ venv = ".venv"
 extraPaths = ["src"]
 
 [tool.pytest.ini_options]
-pythonpath = "src"
+pythonpath = [".", "src"]
+testpaths = ["tests"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/test"]
+packages = ["src"]

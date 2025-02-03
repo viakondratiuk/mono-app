@@ -33,15 +33,13 @@ source .venv/bin/activate
 3. Install all dependencies (including development):
 ```bash
 # Install all dependencies at once
-uv pip install -e ".[dev]"
-
-# Install test dependencies explicitly
-uv pip install pytest pytest-cov
+uv sync
 ```
 
 4. Set up pre-commit hooks:
 ```bash
 # Install the git hooks
+brew install pre-commit
 pre-commit install
 ```
 
